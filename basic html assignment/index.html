@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body class="text-center">
+    <main>
+      <form
+        action="home.html"
+        class="form-signin"
+        onsubmit="return checkLogin()"
+      >
+        <img
+          class="logo"
+          src="assets/images/ix-logo.png"
+          alt="Incubxperts logo"
+        />
+        <h4>Sign in using your IX email</h4>
+
+        <div class="form-floating">
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="name@incubxperts.com"
+          />
+          <label for="email">Email Address</label>
+        </div>
+
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+          />
+          <label id="passLbl" for="password">Password</label>
+        </div>
+
+        <div>
+          <label>
+            <input type="checkbox" id="otpCheck" /> Sign in using OTP
+          </label>
+        </div>
+        <button class="btn btn-primary" type="submit">Sign In</button>
+        <p>Don't have an account. <a href="signup.html">Sign up</a></p>
+        <div>
+          <label class="message" id="messageBox"></label>
+        </div>
+      </form>
+    </main>
+  </body>
+
+  <script>
+    var passLbl = document.getElementById("passLbl");
+    document.getElementById("otpCheck").addEventListener("click", function () {
+      if (!this.checked) {
+        passLbl.innerText = "Password";
+      } else {
+        passLbl.innerText = "Enter OTP";
+      }
+    });
+
+    function checkLogin() {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var message = document.getElementById("messageBox");
+      if (
+        email === "atharvam@incubxperts.com" &&
+        (password === "password" || password === "1234")
+      ) {
+        message.innerHTML = "Login Successfull";
+        message.style.backgroundColor = "yellowgreen";
+        return true;
+      } else {
+        message.innerHTML = "Login Failed";
+        message.style.backgroundColor = "tomato";
+        return false;
+      }
+    }
+  </script>
+</html>

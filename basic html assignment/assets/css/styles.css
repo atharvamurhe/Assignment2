@@ -1,0 +1,57 @@
+body {
+  transition: all ease-in-out 300ms;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  max-height: 50px;
+}
+
+.heading > button {
+  margin: 0.5rem;
+}
+
+.heading > img {
+  object-fit: scale-down;
+  margin-left: -110px;
+}
+
+img.logo {
+  width: 300px;
+  object-fit: cover;
+}
+.img-holder {
+  width: 100%;
+  object-fit: cover;
+}
+
+form.form-signin {
+  width: 100%;
+  max-width: 350px;
+  padding: 10px;
+  margin: auto;
+}
+
+.form-signup {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin: auto;
+}
+
+form > div {
+  margin: 5px;
+}
+
+form > button {
+  width: 80%;
+  max-width: 260px;
+}
+
+label.message {
+  font-weight: bold;
+  color: white;
+  padding: 5px;
+}
